@@ -1,0 +1,46 @@
+Script started on Mon 13 Mar 2017 11:28:16 PM PDT
+[hnunez1@hills asmt03]$ date
+Mon Mar 13 23:28:27 PDT 2017
+[hnunez1@hills asmt03]$ pwd
+/students/hnunez1/asmt03
+[hnunez1@hills asmt03]$ id
+uid=45103(hnunez1) gid=506(students) groups=506(students),1249(c32090),1283(c33738),1337(c36294),1377(c36583)
+[hnunez1@hills asmt03]$ #Assignment 03 Hipolito Nunez
+[hnunez1@hills asmt03]$ echo $TEERM   RM
+dumb
+[hnunez1@hills asmt03]$ E EC  echo $PATH
+/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/students/hnunez1/bin:.
+[hnunez1@hills asmt03]$ uptime
+ 23:29:57 up 16 days, 13:25, 73 users,  load average: 0.04, 0.07, 0.04
+[hnunez1@hills asmt03]$ id
+uid=45103(hnunez1) gid=506(students) groups=506(students),1249(c32090),1283(c33738),1337(c36294),1377(c36583)
+[hnunez1@hills asmt03]$ ./aboutme
+Hello Hipolito you are in 4 classes this semester
+
+You are currently logged onto hills.ccsf.cc.ca.us 
+ There are  73 users logged in 
+
+The current one-minute load average is 0.06 
+
+The system has been up 
+ up 16 days, 13:25, 
+
+Your default search directories are: 
+ /usr/lib64/qt-3.3/bin
+/usr/local/bin
+/bin
+/usr/bin
+/usr/local/sbin
+/usr/sbin
+/sbin
+/students/hnunez1/bin
+.
+Your terminal is dumb 
+
+Here is your home directory  and the space utilization of your home directory in kiB: 2464	/students/hnunez1 
+
+Total files and directories under your home directory is 400 
+
+[hnunez1@hills asmt03]$ exit
+
+Script done on Mon 13 Mar 2017 11:30:32 PM PDT

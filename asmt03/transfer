@@ -1,0 +1,65 @@
+#!/bin/bash
+#
+# transfer.bash - this shell script sets up
+# a transfer directory for the course $CLASS
+# and copies each of its command line arguments
+# into the transfer directory, setting permissions
+# appropriately. 
+#
+error() {
+	local progname=$(basename "$0")
+	echo "$progname: ERROR - $*" >&2
+	exit 1
+}
+
+CLASS=cs160a
+# check that the user's home directory is executable by other
+# if not, the instructor won't be able to transfer the files 
+# even if the transfer area is set up correctly.
+homex=$(ls -ld ~ | cut -c10)
+if ! ls -ld ~ | grep -q '^......x..x'; then
+	echo "your home directory does not appear to be executable by everyone"
+	echo "please make your home directory executable by group and other"
+	echo "by running the command   chmod go+x ~"
+	echo " then run transfer again"
+	exit 1
+fi
+# setup the transfer directory
+if [ ! -d ~/$CLASS/share ]; then
+    mkdir -p ~/$CLASS/share
+	[ $? -ne 0 ] && error "Cannot make directory" ~/$CLASS/share
+fi
+
+# change the permissions, owner and group so that the instructor
+# (in the group cisdept) can access it.
+chmod og+x ~ ~/$CLASS 
+[ $? -ne 0 ] && error "Cannot change permissions of" ~/$CLASS
+chmod 700 ~/$CLASS/share
+[ $? -ne 0 ] && error "Cannot change permissions of" ~/$CLASS/share
+setfacl -m g:cisdept:rx ~/$CLASS/share
+#chgrp cisdept ~/$CLASS/share
+[ $? -ne 0 ] && error "Cannot set group permissions of" ~/$CLASS/share
+
+# for each file, copy it to the transfer directory (share) and
+# change the permissions afterwards. Don't copy non-files NOR
+# files that have blanks in their names.
+# (as they will confuse the transfer program)
+for file in "$@"; do
+    if [ -f "$file" ]; then
+        nwords=$(echo $file | wc -w)
+        if [ $nwords -gt 1 ]; then
+            echo "'$file' has embedded blanks in its name. -skipped" >&2
+            continue
+        fi 
+        cp $file ~/$CLASS/share
+		[ $? -ne 0 ] && error "Cannot copy $file to" ~/$CLASS/share
+		bfile=$(basename $file)
+        #chmod og+r ~/$CLASS/share/$bfile
+        setfacl -m u:gboyd:r ~/$CLASS/share/$bfile
+		[ $? -ne 0 ] && error "Cannot change permissions of" ~/$CLASS/share/$bfile
+        echo "'$file' transferred"
+    else
+        echo "'$file' is not a file"
+    fi 
+done
+

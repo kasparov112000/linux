@@ -1,0 +1,41 @@
+##############################################################################################################################################################
+
+
+USERCLASSNUM=$(id | tr '(' '\n' | grep '^c3' | wc -l | tr -d '\n')   ###This variable holds the # of classes the current student is taking                     #
+
+USERNAMEE=$(pinky -l  $USER | head -n 1 | cut -d: -f3 | tr -d ' ')   ###This var holds the current username, added tr -d to remove trailling spaces            #
+
+HOSTNAME=$(hostname)   #store hostname command in var HOSTNAME                                                                                                 #
+
+uptime=$(uptime | cut -d' ' -f3-6)       #store uptime command in uptime variable                                                                              #
+
+NUSERS=$(uptime | cut -d',' -f3 )
+
+SEARCHDIRS=$(echo $PATH | sed s/:/\\n/g | tr -d ' ')   #store enviroment variable in local variable SEARCHDIRS                                                 #
+
+DSKSPACE=$(du -sk ~ 2> /dev/null)     #store disk space in var DSKSPACE and direct error to /dev/null                                                          #
+
+TOTALFILES=$(ls -lR ~ 2>/dev/null | wc -l 2>/dev/null)  #store total files in var TOTALFILES and direct errors to /dev/null                                    #
+
+ONEMINAVG=$(uptime | cut -d' ' -f13 | tr -d ',')
+
+#################################################################################################################################################################
+
+
+echo -e "Hello $USERNAMEE you are in $USERCLASSNUM classes this semester\n"  #changed echo -n to -e to allow /n
+
+echo -e "You are currently logged onto $HOSTNAME \n There are $NUSERS logged in \n"
+
+echo -e "The current one-minute load average is $ONEMINAVG \n"                                ##Print the ONEMINAVG variable  
+
+echo -e "The system has been up \n $uptime \n"
+
+echo -e "Your default search directories are: \n $SEARCHDIRS"  
+
+echo -e "Your terminal is $TERM \n"
+
+echo -e "Here is your home directory  and the space utilization of your home directory in kiB: $DSKSPACE \n"
+
+echo -e "Total files and directories under your home directory is $TOTALFILES \n"
+
+

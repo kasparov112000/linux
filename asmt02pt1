@@ -1,0 +1,57 @@
+Script started on Sun 19 Feb 2017 05:06:06 PM PST
+[hnunez1@hills cs160a]$ #Hipolito Nunez
+[hnunez1@hills cs160a]$ #cs  CS160a Evening Section 
+[hnunez1@hills cs160a]$ #Tueday  s 6PM
+[hnunez1@hills cs160a]$ PWD   date    #hnunez1
+[hnunez1@hills cs160a]$ PWD
+bash: PWD: command not found
+[hnunez1@hills cs160a]$ pwd
+/students/hnunez1/public_html/cs160a
+[hnunez1@hills cs160a]$ date
+Sun Feb 19 17:07:15 PST 2017
+[hnunez1@hills cs160a]$ ls -lR
+.:
+total 508
+-rw------- 1 hnunez1 students      0 Feb 19 17:06 asmt02pt1
+-rw------- 1 hnunez1 students 471040 Feb 14 17:04 asmt02.tar
+lrwxrwxrwx 1 hnunez1 students     19 Feb 19 13:14 class -> images/penguins.jpg
+drwx------ 2 hnunez1 students   4096 Aug 28 17:00 free-sw_files
+drwx------ 2 hnunez1 students   4096 Feb 14 17:12 fsf
+drwx---r-- 2 hnunez1 students   4096 Feb 14 17:14 images
+-rw-r--r-- 1 hnunez1 students   3774 Feb 19 15:35 index.html
+-rwx---r-- 2 hnunez1 students  25787 Aug 28 17:00 instructor
+drwx-----x 2 hnunez1 students   4096 Feb 19 16:08 opinion
+
+./free-sw_files:
+total 0
+
+./fsf:
+total 48
+-rw------- 1 hnunez1 students 15177 Aug 28 17:00 free-sw.html
+-rw------- 1 hnunez1 students  2185 Aug 28 17:00 gnu.css
+-rw------- 1 hnunez1 students 18011 Aug 28 17:00 gpl.txt
+-rw------- 1 hnunez1 students  6138 Aug 28 17:00 philosophical-gnu-sm.jpg
+
+./images:
+total 416
+-rwx---r-- 1 hnunez1 students   2797 Aug 28 17:00 ccsf.gif
+-rwx---r-- 2 hnunez1 students  25787 Aug 28 17:00 evil.jpg
+-rwx---r-- 1 hnunez1 students   3049 Aug 28 17:00 gnu-head-tiny.jpg
+-rwx---r-- 1 hnunez1 students 150124 Aug 28 17:00 herdofsheep.jpg
+-rwx---r-- 1 hnunez1 students  28964 Aug 28 17:00 homer.gif
+-rwx---r-- 1 hnunez1 students  11062 Aug 28 17:00 montyburns.jpg
+-rwx---r-- 1 hnunez1 students  95865 Aug 28 17:00 penguins.jpg
+-rwx---r-- 1 hnunez1 students  47567 Aug 28 17:00 simpsonscast.jpg
+-rwx---r-- 1 hnunez1 students  34863 Aug 28 17:00 tux.jpg
+-rwx---r-- 1 hnunez1 students   6606 Aug 28 17:00 wileycoyote.jpg
+
+./opinion:
+total 12
+-rw----r-- 1 hnunez1 students 263 Feb 19 15:37 bad.txt
+-rw----r-- 1 hnunez1 students 188 Feb 19 16:08 good.txt
+-rw------- 1 hnunez1 students 204 Feb 14 17:41 yes
+[hnunez1@hills cs160a]$ ls -ld
+drwx---r-x 6 hnunez1 students 4096 Feb 19 17:06 .
+[hnunez1@hills cs160a]$ exit
+
+Script done on Sun 19 Feb 2017 05:08:43 PM PST
